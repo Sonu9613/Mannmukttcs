@@ -26,24 +26,36 @@ const Navbar = () => {
                         href="#about"
                         className="text-gray-700 hover:text-primary transition font-medium"
                     >
-                        About Us
+                        Our impact
                     </a>
                     <a
                         href="#services"
                         className="text-gray-700 hover:text-primary transition font-medium"
                     >
-                        Services
+                        Resources
                     </a>
                     <a
                         href="#contact"
                         className="text-gray-700 hover:text-primary transition font-medium"
                     >
-                        Contact
+                        About
+                    </a>
+                    <a
+                        href="#contact"
+                        className="text-gray-700 hover:text-primary transition font-medium"
+                    >
+                        For Business
+                    </a>
+                    <a
+                        href="#contact"
+                        className="text-gray-700 hover:text-primary transition font-medium hover:font-bold"
+                    >
+                        For Professionals
                     </a>
                 </div>
 
                 {/* Button */}
-                <button className="text-black px-6 py-2 rounded-lg">
+                <button className="text-black px-6 py-2 rounded-lg border-spacing-3 border-black border-2">
                     Get Started
                 </button>
 
