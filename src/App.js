@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Impact from "./pages/Impact";
+import Resources from "./pages/Resources";
+import About from "./pages/About";
+import Business from "./pages/Business";
+import Professionals from "./pages/Professionals";
+import Footer from "./components/Footer";
 
 const App = () => {
-  const [content, setContent] = useState(null);
-
-  useEffect(() => {
-    fetch("/api/landing-page")
-      .then((res) => res.json())
-      .then((data) => setContent(data));
-  }, []);
-
   return (
     <div>
-      <Header />
-      {content && (
-        <>
-          <Hero
-            title={content.title}
-            subtitle={content.subtitle}
-            buttons={content.buttons}
-          />
-        </>
-      )}
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/impact" element={<Impact />} />
+          <Route path="/Resources" element={<Resources />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/professionals" element={<Professionals />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };
