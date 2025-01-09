@@ -6,6 +6,7 @@ import PinkSection from '../components/PinkSection'
 import TeamSection from '../components/TeamSection'
 import SessionsSection from '../components/SessionsSection'
 import ReviewsSection from '../components/ReviewsSection'
+import ContactUs from '../components/ContactUs'
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <SessionsSection />
             <ReviewsSection />
             <HowItWorks />
+            <ContactUs />
         </div>
     )
 }
