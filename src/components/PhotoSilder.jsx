@@ -4,16 +4,21 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const PhotoSlider = () => {
-    const settings = {
+    const settingsTop = {
         dots: false,
         infinite: true,
-        speed: 5000, // Controls the speed
-        slidesToShow: 5, // Number of images visible at once
+        speed: 5000,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 0, // Continuous scrolling
-        cssEase: 'linear', // Smooth scrolling
+        autoplaySpeed: 0,
+        cssEase: 'linear',
         pauseOnHover: false,
+    };
+
+    const settingsBottom = {
+        ...settingsTop,
+        rtl: true, // Reverse direction for the bottom row
     };
 
     const images = [
@@ -31,10 +36,28 @@ const PhotoSlider = () => {
 
     return (
         <div className="mx-auto my-8 w-full overflow-hidden">
-            <Slider {...settings}>
+            {/* Top Scroller */}
+            <Slider {...settingsTop}>
                 {images.map((image, index) => (
-                    <div key={index} className="p-4">
-                        <img className="w-full h-full object-cover rounded-lg shadow-md" src={image} alt={`Slide ${index}`} />
+                    <div key={`top-${index}`} className="p-4">
+                        <img
+                            className="w-full h-full object-cover rounded-lg shadow-md"
+                            src={image}
+                            alt={`Slide ${index}`}
+                        />
+                    </div>
+                ))}
+            </Slider>
+
+            {/* Bottom Scroller */}
+            <Slider {...settingsBottom} className="mt-4">
+                {images.map((image, index) => (
+                    <div key={`bottom-${index}`} className="p-4">
+                        <img
+                            className="w-full h-full object-cover rounded-lg shadow-md"
+                            src={image}
+                            alt={`Slide ${index}`}
+                        />
                     </div>
                 ))}
             </Slider>
